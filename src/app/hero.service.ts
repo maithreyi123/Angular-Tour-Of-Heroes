@@ -19,11 +19,6 @@ export class HeroService {
 
   constructor(private http: HttpClient, private messageService: MessageService) { }
 
-  /** Log a HeroService message with the MessageService */
-  private log(message: string) {
-    this.messageService.add(`HeroService: ${message}`);
-  }
-
   /** GET heroes from the server */
   getHeroes (): Observable<Hero[]> {
     return this.http.get<Hero[]>(this.heroesUrl)
